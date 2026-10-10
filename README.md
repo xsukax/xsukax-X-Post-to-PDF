@@ -28,21 +28,6 @@ Version 1.1 removes the time-zone editing field and suppresses all time-zone lab
 
 If `Download PDF` is blocked by Edge's download preferences, allow downloads from the extension or use Print. For Edge's Print action, set destination to **Save as PDF** and disable Edge's extra print headers/footers if desired.
 
-## HTML sample analysis (x1.html through x4.html)
-
-All 4 supplied HTML files represent X's **initial React application shell** and were 308,072 bytes each. They contain shared CSS, static script URLs and the `X (formerly Twitter)` site metadata, but **zero** `<article>` nodes, `<time>` nodes, `data-testid="tweetText"` nodes and `data-testid="User-Name"` nodes. They therefore cannot prove a particular account name, verification state, publication timestamp or post text. This extension extracts the **live, rendered DOM after X loads**, using semantic markers widely used by X, rather than guessing from irrelevant bootstrap assets.
-
-Selectors/read strategy:
-
-- Post: `article[data-testid="tweet"]`, matching its permalink's `/status/POST_ID` against the current browser URL. This helps avoid saving a reply, a quote or another tweet.
-- Account: `[data-testid="User-Name"]`, profile links and visible `@username` spans.
-- Verification: actual badge markup **inside the selected author's header** (`data-testid="icon-verified"`, accessible verified label, etc.). An unknown status is NOT automatically treated as verified.
-- Date: a `<time datetime="...">` node attached to the selected post permalink. Converts the absolute ISO time to the browser's local time zone.
-- Text: `[data-testid="tweetText"]` or rich-text equivalent in the selected article; preserve explicit line breaks and alt text for inline emoji images.
-- Avatar: profile image under X's tweet author avatar container, restricted to `pbs.twimg.com/profile_images/` to prevent accidentally using the tweet's media/other users' images.
-
-X can change its DOM without notice. The manual editor is a fallback when a field is missing or wrong. It cannot recover deleted/hidden content by itself. The extension is not an authenticity certificate: manual edits intentionally alter the rendered PDF. Verification on X may be blue, gold, gray, or subscription-based; **for a verified account, this product displays the requested blue check graphic** as a design convention rather than reproducing a specific badge tier.
-
 ## Privacy and security
 
 - No X API keys, login secrets, or remote server.
