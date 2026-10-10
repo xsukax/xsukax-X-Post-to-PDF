@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>xsukax X Post PDF — Preview</title><link rel="stylesheet" href="report.css"></head>
+<body>
+<header class="toolbar no-print"><strong><span class="xmark">𝕏</span> xsukax X Post PDF</strong><div class="toolbar-actions"><button id="download" type="button">Download PDF</button><button id="print" type="button">Print / Save searchable PDF</button></div></header>
+<p class="notice no-print" role="status" aria-live="polite" id="notice">Reading extracted post…</p>
+<section class="editor no-print" id="editor" hidden>
+  <div class="editor-heading"><div><h2>Edit extracted X post</h2><p>Correct any field before saving. All edits appear in the preview and exported PDFs.</p></div><button type="button" id="reset" class="reset-button">Restore extracted values</button></div>
+  <div class="edit-grid">
+    <label class="field field-name"><span>Account name</span><input id="edit-name" type="text" maxlength="350" placeholder="Display name" spellcheck="false"></label>
+    <label class="field field-handle"><span>Username</span><input id="edit-username" type="text" maxlength="30" placeholder="@username" autocomplete="off" spellcheck="false"></label>
+    <label class="field field-verified"><span>Verification status</span><select id="edit-verified"><option value="unknown">Unable to determine</option><option value="verified">Verified (blue check)</option><option value="not_verified">Not verified</option></select></label>
+    <label class="field"><span>Publication date</span><input id="edit-date" type="date"></label>
+    <label class="field"><span>Publication time</span><input id="edit-time" type="time" step="60"></label>
+    <label class="field wide"><span>Complete post text</span><textarea id="edit-text" rows="9" placeholder="Full original post text…" spellcheck="false" dir="auto"></textarea><small id="character-count"></small></label>
+    <label class="field wide"><span>Original post URL (shown at bottom)</span><input id="edit-url" type="url" autocomplete="off" spellcheck="false"></label>
+    <label class="field wide"><span>Account avatar image URL (optional)</span><input id="edit-avatar-url" type="url" autocomplete="off" placeholder="https://pbs.twimg.com/profile_images/..."><small id="avatar-status">An original X avatar will be included when available.</small></label>
+    <label class="field wide file-field"><span>Or use a local avatar image</span><input id="edit-avatar-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><small>Processed locally, never uploaded by the extension.</small></label>
+  </div>
+</section>
+<main id="report" class="xpost" hidden>
+  <header class="post-header">
+    <div class="avatar"><span id="avatar-letter">X</span><img id="avatar-image" alt="" hidden></div>
+    <div class="identity">
+      <div class="displayname-line"><h1 id="account-name">—</h1><span class="verified-badge" id="verified-badge" role="img" aria-label="Verified account" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#1d9bf0" d="M12 1.7l2.55 1.52 2.94-.02 1.46 2.55 2.56 1.45-.03 2.96L23 12l-1.52 2.57.03 2.94-2.56 1.46-1.46 2.56-2.95-.03L12 23l-2.57-1.52-2.94.03-1.46-2.56-2.56-1.46.03-2.95L1 12l1.5-2.56-.03-2.95 2.56-1.46 1.46-2.56 2.95.03L12 1.7Z"/><path d="m7.4 12 3 3.1 6.5-6.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.35"/></svg></span></div>
+      <div class="username" id="username">@username</div>
+    </div>
+    <div class="x-logo" aria-hidden="true">𝕏</div>
+  </header>
+  <div class="tweet-content" id="post-text" dir="auto"></div>
+  <div class="post-time" id="date">—</div>
+  <div class="actions" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-8.5 8.5H4l2-4A8.5 8.5 0 1 1 20.5 11.5Z"/></svg></span><span><svg viewBox="0 0 24 24"><path d="M4 8l4-4 4 4M8 4v11a4 4 0 0 0 4 4h7M20 16l-4 4-4-4M16 20V9a4 4 0 0 0-4-4H5"/></svg></span><span><svg viewBox="0 0 24 24"><path d="M12 20s-9-5.5-9-11.3C3 4 9 2.5 12 7c3-4.5 9-3 9 1.7C21 14.5 12 20 12 20Z"/></svg></span><span><svg viewBox="0 0 24 24"><path d="M12 17V3m-5 5 5-5 5 5M5 15v6h14v-6"/></svg></span></div>
+  <footer class="post-url"><span>Original X post URL</span><a id="source" href="#" rel="noopener noreferrer" target="_blank"></a></footer>
+</main>
+<script src="pdf-export.js"></script><script src="report.js"></script>
+</body></html>

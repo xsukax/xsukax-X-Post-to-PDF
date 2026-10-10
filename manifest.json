@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "xsukax X Post PDF",
+  "short_name": "xsukax X PDF",
+  "version": "1.1.0",
+  "description": "Save individual X (Twitter) posts as editable, X-styled PDF documents with account, @username, verification, timestamp, text and source URL.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://pbs.twimg.com/*"],
+  "action": {
+    "default_title": "xsukax — Save X post as PDF",
+    "default_popup": "popup.html"
+  },
+  "icons": {"16":"icons/icon16.png", "48":"icons/icon48.png", "128":"icons/icon128.png"}
+}
