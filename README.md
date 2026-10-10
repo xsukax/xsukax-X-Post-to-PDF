@@ -17,10 +17,10 @@ Version 1.1 removes the time-zone editing field and suppresses all time-zone lab
 
 ## Install in Microsoft Edge
 
-1. Unzip the archive and keep the `xsukax-x-post-pdf` folder intact.
+1. Unzip the archive and keep the `xsukax-X-Post-to-PDF-main` folder intact.
 2. Navigate to **edge://extensions**.
 3. Turn on **Developer mode**.
-4. Choose **Load unpacked** and select the `xsukax-x-post-pdf` folder.
+4. Choose **Load unpacked** and select the `xsukax-X-Post-to-PDF-main` folder.
 5. Open an individual post in Edge at a URL like `https://x.com/ACCOUNT/status/POST_ID` (the legacy `twitter.com` domain also works).
 6. Wait for the post to load, then click the extension icon and **Extract current X post**.
 7. A preview tab opens. Inspect and edit **account name**, **@username**, **verification**, **publication date/time**, **post text**, **source URL** and **avatar** if necessary.
@@ -35,10 +35,6 @@ If `Download PDF` is blocked by Edge's download preferences, allow downloads fro
 - No telemetry, analytics, content uploads, or persistent post-history database.
 - The avatar fetch uses `credentials:'omit'` and verifies the image URL remains on X's CDN.
 - HTML from posts is treated as **text** in the preview (never inserted as trusted HTML).
-
-## Project files
-
-`manifest.json`, `popup.html`, `popup.css`, `popup.js`, `extract.js`, `report.html`, `report.css`, `report.js`, `pdf-export.js`, and `icons/icon16.png`, `icons/icon48.png`, `icons/icon128.png`. `tests/test_extension.py` holds offline Chromium tests (requires playwright, PyMuPDF and Pillow for testing only; these are NOT required by the extension).
 
 ## Supported cases and known limitations
 
